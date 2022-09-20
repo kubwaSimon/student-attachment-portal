@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">HOME</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+            <div class="navbar-nav">
+
+                <a routerLink="/sign-in" class="navbar-brand" style="text-decoration: none;">BACK TO LOGIN</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-6">
+            <img [src]="image" height="100%" width="100%" alt="U.G FinalAttPortal">
+        </div>
+        <div class="col-md-4">
+            <div class="authBlock">
+                <h3 class="text-success">ATTACHEE REGISTRATION</h3>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label" placeholder="Full name" name="Full name" [(ngModel)]="name">Full name</label>
+                    <input type="text" class="form-control" placeholder="Full name" #userName required />
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label" placeholder="username" name="username" [(ngModel)]="username">Email</label>
+                    <input type="email" class="form-control" placeholder="Email Address" #userEmail required />
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label" placeholder="password" name="password" [(ngModel)]="password">password</label>
+                    <input type="password" class="form-control" placeholder="Password" #userPwd required />
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-success" type="button" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+                        REGISTER
+                        </button>
+                </div>
+                <div class="formGroup">
+                    <span class="or"><span class="orInner">Or</span></span>
+                </div>
+                <!-- Continue with Google -->
+                <div class="mb-3">
+                    <button class="btn btn-outline-success" type="button" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Register with Google
+          </button>
+                </div>
+            </div>
+            <div class="redirectToLogin">
+
+                <a routerLink="/sign-in" class="text-primary" style="text-decoration: none;">Already have an account?</a>
+
+            </div>
+        </div>
